@@ -56,6 +56,7 @@ const AudioChannel = (props) => {
     const userVideo = useRef();
     const peersRef = useRef([]);
     const roomID = props.room;
+    
 
     const userDetail={
         room:roomID,
@@ -131,36 +132,30 @@ const AudioChannel = (props) => {
         })
     }
 
-    const username_stun=process.env.USER_NAME || "nmakadiya1@gmail.com";
-    const passsword_stun=process.env.PASSWORD || "12345678";
+   console.log(process.env.REACT_APP_STUN );
+   console.log(process.env.REACT_APP_USER_NAME);
+   console.log(process.env.REACT_APP_CREDENTIAL );
 
-    console.log("Changed : ",username_stun,passsword_stun);
+
+   
 
      function createPeer(userToSignal, callerID, stream) {
         const peer = new Peer({
             initiator: true,
             trickle: false,
               config: {
-               iceServers: [
-                    {
-                        urls:"stun:stun.l.google.com:19302"
-                    },
-                    {
-                        urls:"stun:stun.services.mozilla.com",
-                        username: "louis@mozilla.com", 
-                        credential: "webrtcdemo"
-                    },
-                    {
-                        urls:"turn:numb.viagenie.ca:80",
-                        username:username_stun,
-                        credential:passsword_stun
-                    },
-                     {
-                        urls:"turn:numb.viagenie.ca:443?transport=tcp",
-                        username:username_stun,
-                        credential:passsword_stun
-                    }   
-                ],
+                iceServers: [{   
+                    urls: [ process.env.REACT_APP_STUN ]
+                }, 
+                {   username: process.env.REACT_APP_USER_NAME,   
+                    credential: process.env.REACT_APP_CREDENTIAL,   
+                    urls: [  "turn:bn-turn1.xirsys.com:80?transport=udp",       
+                             "turn:bn-turn1.xirsys.com:3478?transport=udp",       
+                             "turn:bn-turn1.xirsys.com:80?transport=tcp",       
+                             "turn:bn-turn1.xirsys.com:3478?transport=tcp",       
+                             "turns:bn-turn1.xirsys.com:443?transport=tcp",       
+                             "turns:bn-turn1.xirsys.com:5349?transport=tcp"   ]
+                }],
             },
             stream,
         });
@@ -178,26 +173,18 @@ const AudioChannel = (props) => {
             initiator: false,
             trickle: false,
               config: {
-              iceServers: [
-                    {
-                        urls:"stun:stun.l.google.com:19302"
-                    },
-                    {
-                        urls:"stun:stun.services.mozilla.com",
-                        username: "louis@mozilla.com", 
-                        credential: "webrtcdemo"
-                    },
-                    {
-                        urls:"turn:numb.viagenie.ca:80",
-                        username:username_stun,
-                        credential:passsword_stun
-                    },
-                     {
-                        urls:"turn:numb.viagenie.ca:443?transport=tcp",
-                        username:username_stun,
-                        credential:passsword_stun
-                    }
-                ],
+                iceServers: [{   
+                    urls: [ process.env.REACT_APP_STUN ]
+                }, 
+                {   username: process.env.REACT_APP_USER_NAME,   
+                    credential: process.env.REACT_APP_CREDENTIAL,   
+                    urls: [  "turn:bn-turn1.xirsys.com:80?transport=udp",       
+                             "turn:bn-turn1.xirsys.com:3478?transport=udp",       
+                             "turn:bn-turn1.xirsys.com:80?transport=tcp",       
+                             "turn:bn-turn1.xirsys.com:3478?transport=tcp",       
+                             "turns:bn-turn1.xirsys.com:443?transport=tcp",       
+                             "turns:bn-turn1.xirsys.com:5349?transport=tcp"   ]
+                }],
             },
             stream,
         })

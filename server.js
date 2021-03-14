@@ -6,11 +6,14 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
+const cors = require('cors');
 
 
 const users = {};
 
 const socketToRoom = {};
+
+app.use(cors());
 
 io.on('connection', socket => {
     socket.on("join room", userDetail => {
