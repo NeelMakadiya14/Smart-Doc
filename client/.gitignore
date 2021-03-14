@@ -5,11 +5,6 @@
 /.pnp
 .pnp.js
 
-<<<<<<< HEAD
-/clent/node_modules
-
-=======
->>>>>>> 40686c394ab225d00b4b4c6dbdd9de3dce28fb2a
 # testing
 /coverage
 
@@ -26,8 +21,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-<<<<<<< HEAD
-=======
 
 .env
->>>>>>> 40686c394ab225d00b4b4c6dbdd9de3dce28fb2a
