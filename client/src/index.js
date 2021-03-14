@@ -17,7 +17,7 @@ const Connect = () => {
   const userCookie=cookies.get('userCookie');
   const [user,setUser]=useState(userCookie?true:false);
   console.log("From ENV:",process.env.CLIENT_ID);
-  const client_Id=process.env.CLIENT_ID || "39603121170-058n9lara0vqjr2fomfv4nndgsd3aarm.apps.googleusercontent.com";
+  const client_Id=process.env.CLIENT_ID || "320579900532-2v5d813s6a6apgda92l4k266kdjr2aht.apps.googleusercontent.com";
   
   const responseGoogle = (response)=>{
       console.log("Success");
