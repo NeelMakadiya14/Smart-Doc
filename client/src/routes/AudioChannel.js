@@ -141,26 +141,21 @@ const AudioChannel = (props) => {
             initiator: true,
             trickle: false,
               config: {
-               iceServers: [
-                    {
-                        urls:"stun:stun.l.google.com:19302"
-                    },
-                    {
-                        urls:"stun:stun.services.mozilla.com",
-                        username: "louis@mozilla.com", 
-                        credential: "webrtcdemo"
-                    },
-                    {
-                        urls:"turn:numb.viagenie.ca:80",
-                        username:username_stun,
-                        credential:passsword_stun
-                    },
-                     {
-                        urls:"turn:numb.viagenie.ca:443?transport=tcp",
-                        username:username_stun,
-                        credential:passsword_stun
-                    }   
-                ],
+                iceServers: [{   
+                    urls: [ "stun:bn-turn1.xirsys.com" ]
+                }, 
+                {   
+                    username: "qHtLVEHF6H9ZmteYAHm3-qOkRrPjNYQa1Pa1IxlDpVP_KQHIVuYk-NnNtveMDgijAAAAAGBOEKJOZWVsTWFrYWRpeWE=",   
+                    credential: "d88d47d0-84c9-11eb-a788-0242ac140004",   
+                    urls: [       
+                        "turn:bn-turn1.xirsys.com:80?transport=udp",       
+                        "turn:bn-turn1.xirsys.com:3478?transport=udp",       
+                        "turn:bn-turn1.xirsys.com:80?transport=tcp",       
+                        "turn:bn-turn1.xirsys.com:3478?transport=tcp",       
+                        "turns:bn-turn1.xirsys.com:443?transport=tcp",       
+                        "turns:bn-turn1.xirsys.com:5349?transport=tcp"   
+                    ]
+                }],
             },
             stream,
         });
@@ -178,26 +173,21 @@ const AudioChannel = (props) => {
             initiator: false,
             trickle: false,
               config: {
-              iceServers: [
-                    {
-                        urls:"stun:stun.l.google.com:19302"
-                    },
-                    {
-                        urls:"stun:stun.services.mozilla.com",
-                        username: "louis@mozilla.com", 
-                        credential: "webrtcdemo"
-                    },
-                    {
-                        urls:"turn:numb.viagenie.ca:80",
-                        username:username_stun,
-                        credential:passsword_stun
-                    },
-                     {
-                        urls:"turn:numb.viagenie.ca:443?transport=tcp",
-                        username:username_stun,
-                        credential:passsword_stun
-                    }
-                ],
+                iceServers: [{   
+                    urls: [ "stun:bn-turn1.xirsys.com" ]
+                }, 
+                {   
+                    username: "qHtLVEHF6H9ZmteYAHm3-qOkRrPjNYQa1Pa1IxlDpVP_KQHIVuYk-NnNtveMDgijAAAAAGBOEKJOZWVsTWFrYWRpeWE=",   
+                    credential: "d88d47d0-84c9-11eb-a788-0242ac140004",   
+                    urls: [       
+                        "turn:bn-turn1.xirsys.com:80?transport=udp",       
+                        "turn:bn-turn1.xirsys.com:3478?transport=udp",       
+                        "turn:bn-turn1.xirsys.com:80?transport=tcp",       
+                        "turn:bn-turn1.xirsys.com:3478?transport=tcp",       
+                        "turns:bn-turn1.xirsys.com:443?transport=tcp",       
+                        "turns:bn-turn1.xirsys.com:5349?transport=tcp"   
+                    ]
+                }],
             },
             stream,
         })
