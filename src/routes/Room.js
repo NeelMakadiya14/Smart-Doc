@@ -37,7 +37,7 @@ export default function Room(props) {
             doc_id:roomID,
     }
 
-    const url = (process.env.NODE_ENV==="production" ? "https://thawing-dawn-49846.herokuapp.com/" : "http://localhost:5000/");
+    const url = "https://thawing-dawn-49846.herokuapp.com/";
     
     useEffect(()=>{
         console.log(obj);

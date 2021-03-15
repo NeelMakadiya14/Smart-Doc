@@ -22,7 +22,7 @@ const CreateRoom = (props) => {
 
     const [docs,setDocs]=useState([]);
 
-    const url = (process.env.NODE_ENV==="production" ? "https://thawing-dawn-49846.herokuapp.com/" : "http://localhost:5000/");
+    const url = "https://thawing-dawn-49846.herokuapp.com/";
 
     useEffect(() => {
         axios.get(`${url}user_doc/byUser?GID=${userCookie.GID}`).then((res)=>{
