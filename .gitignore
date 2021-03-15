@@ -5,8 +5,6 @@
 /.pnp
 .pnp.js
 
-/clent/node_modules
-
 
 # testing
 /coverage
