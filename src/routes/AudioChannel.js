@@ -86,7 +86,7 @@ const AudioChannel = (props) => {
                 users.forEach(user => {
                     const peer = createPeer(user.socketID, socketRef.current.id, stream);
                     peersRef.current.push({
-                        peerID: user.socketID,
+                        peerID103297303729681626964: user.socketID,
                         peer,
                         name:user.name,
                         GID:user.GID
@@ -151,8 +151,7 @@ const AudioChannel = (props) => {
                 {   
                     username,   
                     credential,   
-                    urls: [       
-                        `${turn_url}:80?transport=udp`,            
+                    urls: [                  
                         `${turn_url}:443?transport=tcp`,        
                     ]
                 }],
@@ -179,8 +178,7 @@ const AudioChannel = (props) => {
                 {   
                     username,   
                     credential,   
-                    urls: [       
-                        `${turn_url}:80?transport=udp`,            
+                    urls: [                  
                         `${turn_url}:443?transport=tcp`,   
                     ]
                 }],
