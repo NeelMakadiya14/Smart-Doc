@@ -17,8 +17,8 @@ function Chat(props) {
   const [messages, setMessages] = useState([]);
   console.log("Test");
 
-  // const url = (process.env.NODE_ENV==="production" ? "https://thawing-dawn-49846.herokuapp.com/" : "http://localhost:5000/");
-  const url = "https://thawing-dawn-49846.herokuapp.com/";
+  // const url = (process.env.NODE_ENV==="production" ? process.env.REACT_APP_SERVER_URL : "http://localhost:5000/");
+  const url = process.env.REACT_APP_SERVER_URL;
   console.log(process.env.NODE_ENV, url);
 
   const userDetail = {
@@ -35,7 +35,7 @@ function Chat(props) {
   };
 
   useEffect(() => {
-    axios.get(`${url}chat?room=${props.roomID}`).then((res) => {
+    axios.get(`${url}/chat?room=${props.roomID}`).then((res) => {
       console.log(res.data);
       setMessages(res.data);
     });
